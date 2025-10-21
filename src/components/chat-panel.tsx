@@ -17,7 +17,7 @@ export function ChatPanel({
   onSendMessage,
 }: ChatPanelProps) {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full bg-background">
       {conversation ? (
         <>
           <ChatMessages

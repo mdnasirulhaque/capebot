@@ -5,7 +5,7 @@ import type { Conversation, Message } from '@/lib/types';
 import { getAiResponse } from '@/lib/actions';
 import { ChatSidebar } from '@/components/chat-sidebar';
 import { ChatPanel } from '@/components/chat-panel';
-import { SidebarProvider } from '@/components/ui/sidebar';
+import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { nanoid } from 'nanoid';
 
 const initialConversations: Conversation[] = [
@@ -84,21 +84,19 @@ export function ChatPage() {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen">
-        <ChatSidebar
-          conversations={conversations}
-          activeConversationId={activeConversationId}
-          onNewConversation={handleNewConversation}
-          onSelectConversation={handleSelectConversation}
+      <ChatSidebar
+        conversations={conversations}
+        activeConversationId={activeConversationId}
+        onNewConversation={handleNewConversation}
+        onSelectConversation={handleSelectConversation}
+      />
+      <SidebarInset>
+        <ChatPanel
+          conversation={activeConversation}
+          isLoading={isLoading}
+          onSendMessage={handleSendMessage}
         />
-        <main className="flex-1 flex flex-col">
-          <ChatPanel
-            conversation={activeConversation}
-            isLoading={isLoading}
-            onSendMessage={handleSendMessage}
-          />
-        </main>
-      </div>
+      </SidebarInset>
     </SidebarProvider>
   );
 }

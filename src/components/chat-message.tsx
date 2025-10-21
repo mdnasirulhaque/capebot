@@ -18,7 +18,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
     <div
       className={cn(
         'flex items-start gap-3 animate-in fade-in',
-        isUser ? 'justify-start' : 'justify-end'
+        isUser ? 'justify-end' : 'justify-start'
       )}
     >
       {!isUser && aiAvatar && (
@@ -32,7 +32,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
           'rounded-lg px-4 py-2 text-sm max-w-[75%]',
           isUser
             ? 'bg-primary text-primary-foreground'
-            : 'bg-muted text-foreground'
+            : 'bg-gray-100 text-gray-900'
             
         )}
       >

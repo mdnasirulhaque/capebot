@@ -162,6 +162,7 @@ const Sidebar = React.forwardRef<
     side?: "left" | "right"
     variant?: "sidebar" | "floating" | "inset"
     collapsible?: "offcanvas" | "icon" | "none"
+    defaultOpen?: boolean
   }
 >(
   (
@@ -171,6 +172,7 @@ const Sidebar = React.forwardRef<
       collapsible = "offcanvas",
       className,
       children,
+      defaultOpen,
       ...props
     },
     ref
@@ -212,8 +214,6 @@ const Sidebar = React.forwardRef<
       )
     }
 
-    const { open, ...rest } = props;
-
     return (
       <div
         ref={ref}
@@ -222,7 +222,7 @@ const Sidebar = React.forwardRef<
         data-collapsible={state === "collapsed" ? collapsible : ""}
         data-variant={variant}
         data-side={side}
-        {...rest}
+        {...props}
       >
         {/* This is what handles the sidebar gap on desktop */}
         <div

@@ -58,7 +58,7 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
                 <FormControl>
                   <Textarea
                     placeholder="Type a message..."
-                    className="pr-12 resize-none bg-gray-100 text-black"
+                    className="pr-12 resize-none bg-gray-100 text-black focus-visible:ring-0"
                     rows={1}
                     onKeyDown={handleKeyDown}
                     disabled={isLoading || isPending}

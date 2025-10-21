@@ -28,8 +28,8 @@ export function ChatSidebar({
   onSelectConversation,
 }: ChatSidebarProps) {
   return (
-    <Sidebar collapsible="icon">
-      <SidebarHeader className="p-4 justify-between flex items-center">
+    <Sidebar collapsible="icon" className="group-data-[collapsible=icon]:p-2">
+      <SidebarHeader className="p-2 justify-between flex items-center h-12">
         <div className="flex items-center gap-2 group-data-[collapsible=icon]:hidden">
             <Bot className="text-primary w-8 h-8"/>
             <h1 className="font-semibold text-lg">CAPEBot</h1>
@@ -55,7 +55,7 @@ export function ChatSidebar({
                 className="justify-start"
               >
                 <MessageSquare size={16}/>
-                <span>{conversation.title}</span>
+                <span className="truncate">{conversation.title}</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

@@ -66,7 +66,7 @@ export function ChatSidebar({
           ))}
         </SidebarMenu>
       </SidebarContent>
-      <SidebarFooter className="p-4 flex items-center justify-center">
+      <SidebarFooter className="p-2 flex items-center justify-center">
         <SidebarTrigger />
       </SidebarFooter>
     </Sidebar>

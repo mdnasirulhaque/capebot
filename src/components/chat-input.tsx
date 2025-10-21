@@ -58,7 +58,7 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
                 <FormControl>
                   <Textarea
                     placeholder="Type a message..."
-                    className="pr-12 resize-none bg-gray-100 text-black focus-visible:ring-0"
+                    className="pr-12 resize-none bg-gray-100 text-black focus-visible:ring-0 rounded-full py-3 px-4 shadow-sm"
                     rows={1}
                     onKeyDown={handleKeyDown}
                     disabled={isLoading || isPending}
@@ -71,7 +71,7 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
           <Button
             type="submit"
             size="icon"
-            className="absolute right-2"
+            className="absolute right-2.5 bg-primary rounded-full"
             disabled={isLoading || isPending || !form.watch('message')}
           >
             <SendHorizonal />

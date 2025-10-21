@@ -44,7 +44,7 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
   };
 
   return (
-    <div className="p-4 border-t bg-white dark:bg-white">
+    <div className="p-4 border-t bg-white">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -58,7 +58,7 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
                 <FormControl>
                   <Textarea
                     placeholder="Type a message..."
-                    className="pr-12 resize-none bg-gray-100 dark:bg-gray-100 dark:text-gray-900"
+                    className="pr-12 resize-none bg-gray-100 text-black"
                     rows={1}
                     onKeyDown={handleKeyDown}
                     disabled={isLoading || isPending}

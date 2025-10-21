@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import { Bot, MessageSquarePlus, MessageSquare } from 'lucide-react';
+import { ThemeSwitcher } from './theme-switcher';
 
 type ChatSidebarProps = {
   conversations: Conversation[];
@@ -61,8 +62,9 @@ export function ChatSidebar({
           ))}
         </SidebarMenu>
       </SidebarContent>
-      <SidebarFooter className="p-4 group-data-[collapsible=icon]:hidden">
+      <SidebarFooter className="p-4 flex justify-between items-center group-data-[collapsible=icon]:hidden">
         <p className="text-xs text-muted-foreground">© 2024 CAPEBot</p>
+        <ThemeSwitcher />
       </SidebarFooter>
     </Sidebar>
   );

@@ -21,27 +21,28 @@ export function ChatMessage({ message }: ChatMessageProps) {
         isUser ? 'justify-start' : 'justify-end'
       )}
     >
-      {isUser && (
+      {!isUser && aiAvatar && (
         <Avatar className="h-8 w-8">
-          <AvatarFallback>
-            <User className="w-4 h-4" />
-          </AvatarFallback>
+          <AvatarImage src={aiAvatar.imageUrl} alt={aiAvatar.description} data-ai-hint={aiAvatar.imageHint} width={40} height={40}/>
+          <AvatarFallback>AI</AvatarFallback>
         </Avatar>
       )}
       <div
         className={cn(
           'rounded-lg px-4 py-2 text-sm max-w-[75%]',
           isUser
-            ? 'bg-muted text-foreground'
-            : 'bg-primary text-primary-foreground'
+            ? 'bg-primary text-primary-foreground'
+            : 'bg-muted text-foreground'
+            
         )}
       >
         <p style={{ whiteSpace: 'pre-wrap' }}>{message.content}</p>
       </div>
-      {!isUser && aiAvatar && (
-        <Avatar className="h-8 w-8">
-          <AvatarImage src={aiAvatar.imageUrl} alt={aiAvatar.description} data-ai-hint={aiAvatar.imageHint} width={40} height={40}/>
-          <AvatarFallback>AI</AvatarFallback>
+      {isUser && (
+        <Avatar className="h-8 w-8 bg-primary text-primary-foreground">
+          <AvatarFallback>
+            <User className="w-4 h-4" />
+          </AvatarFallback>
         </Avatar>
       )}
     </div>

@@ -5,20 +5,29 @@ import { Button } from '@/components/ui/button';
 import { Moon, Sun } from 'lucide-react';
 
 export function ThemeSwitcher() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState<string | null>(null);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const initialTheme = savedTheme || systemTheme;
+    setTheme(initialTheme);
   }, []);
 
+  useEffect(() => {
+    if (theme) {
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+      localStorage.setItem('theme', theme);
+    }
+  }, [theme]);
+  
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
+
+  if (theme === null) {
+    return null; // Or a loading skeleton
+  }
 
   return (
     <Button variant="ghost" size="icon" onClick={toggleTheme}>

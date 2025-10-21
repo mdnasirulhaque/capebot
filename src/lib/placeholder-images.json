@@ -1,3 +1,10 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "ai-avatar",
+      "description": "AI assistant avatar for CAPEBot",
+      "imageUrl": "https://images.unsplash.com/photo-1736564176042-b3d49989b230?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyb2JvdCUyMGFic3RyYWN0fGVufDB8fHx8MTc2MTAxMzYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robot abstract"
+    }
+  ]
 }

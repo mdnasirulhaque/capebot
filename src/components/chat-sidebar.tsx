@@ -66,10 +66,6 @@ export function ChatSidebar({
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter className="p-4 flex flex-col gap-4">
-        <div className="flex justify-between items-center group-data-[collapsible=icon]:hidden">
-          <p className="text-xs text-muted-foreground">© 2024 CAPEBot</p>
-          <ThemeSwitcher />
-        </div>
         <div className="hidden group-data-[collapsible=icon]:flex justify-center">
             <ThemeSwitcher />
         </div>

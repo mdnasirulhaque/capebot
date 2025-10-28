@@ -35,10 +35,10 @@ export function ChatPanel({
         ) : (
           <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center h-full">
             <h2 className="text-2xl font-bold text-gray-900">
-              Welcome to CAPEBot
+              Your AI-Powered Chat Assistant
             </h2>
-            <p className="text-gray-500">
-              Start a new conversation or select one from the sidebar.
+            <p className="text-gray-500 max-w-md">
+              Start a new conversation or select one from the sidebar to begin interacting with CAPEBot. You can ask questions, get help with tasks, or just have a friendly chat.
             </p>
           </div>
         )}

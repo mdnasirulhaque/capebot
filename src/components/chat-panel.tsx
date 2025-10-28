@@ -18,10 +18,10 @@ export function ChatPanel({
 }: ChatPanelProps) {
   return (
     <div className="flex flex-col h-screen bg-white dark:bg-white">
-      <header className="p-4 border-b flex items-center justify-between bg-white">
-        <div className="flex items-center gap-2">
+      <header className="px-4 py-3 border-b flex items-center justify-between bg-white">
+        <div className="flex items-center gap-3">
           <SidebarTrigger />
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900">
             {conversation?.title ?? 'CAPEBot'}
           </h2>
         </div>

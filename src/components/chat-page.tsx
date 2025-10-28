@@ -79,6 +79,7 @@ export function ChatPage() {
           conversations={conversations}
           activeConversationId={activeConversationId}
           onSelectConversation={handleSelectConversation}
+          onSendMessage={handleSendMessage}
         />
         <SidebarInset>
           <ChatPanel

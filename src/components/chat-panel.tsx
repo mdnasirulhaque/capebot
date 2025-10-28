@@ -4,6 +4,7 @@ import type { Conversation } from '@/lib/types';
 import { ChatMessages } from '@/components/chat-messages';
 import { ChatInput } from '@/components/chat-input';
 import { SidebarTrigger } from '@/components/ui/sidebar';
+import { Bot } from 'lucide-react';
 
 type ChatPanelProps = {
   conversation: Conversation | undefined;
@@ -36,13 +37,18 @@ export function ChatPanel({
             isLoading={isLoading}
           />
         ) : (
-          <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center h-full">
-            <h2 className="text-2xl font-bold text-gray-900">
-              Your AI-Powered Chat Assistant
-            </h2>
-            <p className="text-gray-500 max-w-md">
-              Start a new conversation or select one from the sidebar to begin interacting with CAPEBot. You can ask questions, get help with tasks, or just have a friendly chat.
-            </p>
+          <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center h-full bg-gray-50 dark:bg-gray-900/5">
+            <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-md max-w-md text-center">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mx-auto mb-4">
+                <Bot className="w-8 h-8 text-primary" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-2">
+                Welcome to CAPEBot
+                </h2>
+                <p className="text-gray-500 dark:text-gray-400">
+                Your friendly AI-powered chat assistant. Start a new conversation or select one from the sidebar to begin.
+                </p>
+            </div>
           </div>
         )}
       </div>

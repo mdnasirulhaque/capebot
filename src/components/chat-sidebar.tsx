@@ -25,6 +25,13 @@ const sampleQuestions = [
   'What is Next.js?',
   'Explain Tailwind CSS.',
   'What are server components?',
+  'Difference between React and Next.js?',
+  'How does TypeScript improve JavaScript?',
+  'What is Genkit?',
+  'Explain the concept of AI flows.',
+  'What are Large Language Models?',
+  'How do I use ShadCN components?',
+  'What is Firebase?',
 ];
 
 export function ChatSidebar({

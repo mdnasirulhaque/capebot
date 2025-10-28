@@ -35,16 +35,6 @@ export function ChatPage() {
     (c) => c.id === activeConversationId
   );
 
-  const handleNewConversation = () => {
-    const newConversation: Conversation = {
-      id: nanoid(),
-      title: 'New Conversation',
-      messages: [],
-    };
-    setConversations([newConversation, ...conversations]);
-    setActiveConversationId(newConversation.id);
-  };
-
   const handleSelectConversation = (id: string) => {
     setActiveConversationId(id);
   };
@@ -88,7 +78,6 @@ export function ChatPage() {
         <ChatSidebar
           conversations={conversations}
           activeConversationId={activeConversationId}
-          onNewConversation={handleNewConversation}
           onSelectConversation={handleSelectConversation}
         />
         <SidebarInset>

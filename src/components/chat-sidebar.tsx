@@ -10,20 +10,17 @@ import {
   SidebarMenuButton,
   SidebarFooter,
 } from '@/components/ui/sidebar';
-import { Button } from '@/components/ui/button';
-import { Bot, MessageSquarePlus, MessageSquare } from 'lucide-react';
+import { Bot, MessageSquare } from 'lucide-react';
 
 type ChatSidebarProps = {
   conversations: Conversation[];
   activeConversationId: string | null;
-  onNewConversation: () => void;
   onSelectConversation: (id: string) => void;
 };
 
 export function ChatSidebar({
   conversations,
   activeConversationId,
-  onNewConversation,
   onSelectConversation,
 }: ChatSidebarProps) {
   return (
@@ -35,14 +32,6 @@ export function ChatSidebar({
             <h1 className="font-semibold text-lg">CAPEBot</h1>
           </div>
         </div>
-        <Button
-          variant="ghost"
-          className="w-full justify-start gap-2"
-          onClick={onNewConversation}
-        >
-          <MessageSquarePlus size={16} />
-          <span>New Chat</span>
-        </Button>
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu className="mt-4">

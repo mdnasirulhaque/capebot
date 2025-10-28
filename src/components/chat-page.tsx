@@ -84,7 +84,7 @@ export function ChatPage() {
 
   return (
     <SidebarProvider>
-      <div className='flex h-screen'>
+      <div className='flex h-screen w-full'>
         <ChatSidebar
           conversations={conversations}
           activeConversationId={activeConversationId}

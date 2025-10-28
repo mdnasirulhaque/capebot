@@ -83,20 +83,22 @@ export function ChatPage() {
   };
 
   return (
-    <SidebarProvider defaultOpen={true}>
-      <ChatSidebar
-        conversations={conversations}
-        activeConversationId={activeConversationId}
-        onNewConversation={handleNewConversation}
-        onSelectConversation={handleSelectConversation}
-      />
-      <SidebarInset>
-        <ChatPanel
-          conversation={activeConversation}
-          isLoading={isLoading}
-          onSendMessage={handleSendMessage}
+    <SidebarProvider>
+      <div className='flex h-screen'>
+        <ChatSidebar
+          conversations={conversations}
+          activeConversationId={activeConversationId}
+          onNewConversation={handleNewConversation}
+          onSelectConversation={handleSelectConversation}
         />
-      </SidebarInset>
+        <SidebarInset>
+          <ChatPanel
+            conversation={activeConversation}
+            isLoading={isLoading}
+            onSendMessage={handleSendMessage}
+          />
+        </SidebarInset>
+      </div>
     </SidebarProvider>
   );
 }

@@ -27,7 +27,7 @@ export function ChatSidebar({
   onSelectConversation,
 }: ChatSidebarProps) {
   return (
-    <Sidebar collapsible="none">
+    <Sidebar collapsible="none" className='h-screen'>
       <SidebarHeader className="p-2 flex-col gap-2 h-auto">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center gap-2">

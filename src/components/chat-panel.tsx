@@ -18,7 +18,7 @@ export function ChatPanel({
   onSendMessage,
 }: ChatPanelProps) {
   return (
-    <div className="flex flex-col h-screen bg-white dark:bg-white p-4">
+    <div className="flex flex-col h-screen bg-white dark:bg-white">
       <header className="px-4 py-3 bg-gray-50 dark:bg-gray-900/20 border-b flex items-center justify-between">
         <div className="flex items-center gap-3">
           <SidebarTrigger />
@@ -30,7 +30,7 @@ export function ChatPanel({
         </div>
         <div className='w-10'></div>
       </header>
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto p-4">
         {conversation ? (
           <ChatMessages
             messages={conversation.messages}

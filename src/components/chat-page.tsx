@@ -83,7 +83,7 @@ export function ChatPage() {
   };
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={true}>
       <ChatSidebar
         conversations={conversations}
         activeConversationId={activeConversationId}
